@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/michaelt/Desktop/EG2-classification-machine-learning-Project/mlruns/0/24e6911e68314c02a57e6c8f64748f49/artifacts
+end_time: 1719742066741
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 24e6911e68314c02a57e6c8f64748f49
+run_name: Random Forest
+run_uuid: 24e6911e68314c02a57e6c8f64748f49
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719742065317
+status: 3
+tags: []
+user_id: michaelt

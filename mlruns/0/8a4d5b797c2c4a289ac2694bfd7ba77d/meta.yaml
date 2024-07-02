@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/michaelt/Desktop/EG2-classification-machine-learning-Project/mlruns/0/8a4d5b797c2c4a289ac2694bfd7ba77d/artifacts
+end_time: 1719742167579
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8a4d5b797c2c4a289ac2694bfd7ba77d
+run_name: Gradient Boosting
+run_uuid: 8a4d5b797c2c4a289ac2694bfd7ba77d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719742166196
+status: 3
+tags: []
+user_id: michaelt
