@@ -62,7 +62,6 @@ graphene==3.3
 graphql-core==3.2.3
 graphql-relay==3.2.0
 greenlet==3.0.3
-grpc-cpp==1.48.2
 grpcio==1.64.1
 grpcio-status==1.62.2
 h5py==3.11.0
