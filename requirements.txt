@@ -33,7 +33,6 @@ itsdangerous==2.2.0
 jinja2==3.1.4
 joblib==1.4.2
 kiwisolver==1.4.4
-libcrc32c==1.5.0
 markdown==3.6
 markupsafe==2.1.3
 matplotlib-base==3.8.4
