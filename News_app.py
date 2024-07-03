@@ -38,6 +38,8 @@ from nltk.corpus import stopwords
 test_data = pd.read_csv('test.csv')
 y_true = test_data['category'].tolist()
 
+base_path = os.path.join(os.getcwd(), 'My-App-Repo')
+
 
 # Function to preprocess text
 def preprocess_text(text, stopwords):
@@ -78,7 +80,7 @@ def load_model_and_metadata(model_folder):
     
     
     
-    Newshub_app = r'C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\data_pre'
+    Newshub_app = os.path.join(base_path, 'data_pre')
     label_encoder_path = os.path.join(Newshub_app, 'label_encoder.pkl')
     tfidf_vectorizer_path = os.path.join(Newshub_app, 'tfidf_vectorizer.pkl')
     selector_path = os.path.join(Newshub_app, 'selectkbest.pkl')
@@ -121,7 +123,8 @@ def main():
     col1, col2 = st.sidebar.columns([2, 1])  # Divide the sidebar into two columns
 
     with col1:
-        st.image(r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\home.jpg", width=300)  # Place the logo image in the first column
+        image_path = os.path.join(base_path, 'pictures', 'home.jpg')
+	st.image(image_path, width=300)  # Place the logo image in the first column
 
     with col2:
        options = ["Home", "About", "EDA & Overview", "Models", "Limitations", "Calendar"]
@@ -130,7 +133,8 @@ def main():
 
   # Build out the home page
     if selected_option == "Home":
-        st.image(r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\home.jpg",width=1000)
+        image_path2 = os.path.join(base_path, 'pictures', 'home.jpg')
+	st.image(image_path2, width=300)
         st.title("NewsHub Classifier App")
         st.image("https://media.istockphoto.com/id/1283277781/photo/read-online-news-media-on-laptop.jpg?s=612x612&w=0&k=20&c=D2EcPDQ3YbPPxGEWkB8iWvpt7LqNso9Sa-bX-9Q3RL4=", width=1500)
         st.header("Our Mission")
@@ -179,12 +183,12 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
 
         
         wordcloud_paths = [
-            r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\output_eda1.png",
-            r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\output_eda2.png",
-            r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\output_eda3.png",
-            r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\output_eda4.png",
-            r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\output_eda5.png"
-        ]
+    		os.path.join(base_path, 'pictures', 'output_eda1.png'),
+    		os.path.join(base_path, 'pictures', 'output_eda2.png'),
+    		os.path.join(base_path, 'pictures', 'output_eda3.png'),
+    		os.path.join(base_path, 'pictures', 'output_eda4.png'),
+    		os.path.join(base_path, 'pictures', 'output_eda5.png')
+		]
 
         
         cols = st.columns(len(wordcloud_paths))
@@ -207,7 +211,7 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
         st.write("UMap Projection of Document Clusters")
 
         # Display UMap projection image
-        st.image(r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\output.png", caption='UMap Projection of Document Clusters', use_column_width=True, width=300)
+        st.image(os.path.join(base_path, 'pictures', 'output.png'), caption='UMap Projection of Document Clusters', use_column_width=True, width=300)
 
         # Display using st.markdown with Markdown syntax
         st.markdown("""
@@ -265,15 +269,17 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
 
         if model_choice == "SVM":
             
-            model_folder = r'C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\mlruns\0\fa12835b82dd42c3bb8400d3b6982f49'
+            model_folder = os.path.join(base_path, 'mlruns', '0', 'fa12835b82dd42c3bb8400d3b6982f49')
 
         elif model_choice == "Random Forest":
             
-            model_folder = r'C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\mlruns\0\24e6911e68314c02a57e6c8f64748f49'
+            
+	    model_folder = os.path.join(base_path, 'mlruns', '0', '24e6911e68314c02a57e6c8f64748f49')
 
         elif model_choice == "Gradient Boosting":
             
-            model_folder = r'C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\mlruns\0\8a4d5b797c2c4a289ac2694bfd7ba77d'
+            
+	    model_folder = os.path.join(base_path, 'mlruns', '0', '8a4d5b797c2c4a289ac2694bfd7ba77d')
 
         
         label_encoder, tfidf_vectorizer, selector, scaler, model, meta_data = load_model_and_metadata(model_folder)
@@ -320,7 +326,7 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
        
     #Add collaborations
         st.header("Our partnerships include:")
-        st.image(r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\avout.jpg")
+        st.image(os.path.join(base_path, 'pictures', 'avout.jpg'))
         st.header("Frequently Asked Questions")
         faq={"How do I use the app to classify articles?": "Simply input the text of the article and press the \"predict\" button. The app will automatically classify which category the article belongs to.",
     "What do I do if the app incorrectly classifies an article?": "If the app makes an incorrect classification, please provide feedback through the designated feedback option to help us improve the accuracy of the model.",
@@ -333,16 +339,11 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
         
         
 
-    # Build out the Overview page
-    elif selected_option == "Overview":
-        st.title("App Overview")
-        st.write("Our app uses a TF-IDF vectorizer to transform text data into numerical features")
-        st.write("We selected three of our best-performing models to predict the category of the given article")
-        st.write("Our app is designed to provide a user-friendly interface for classifying articles")
+    
 
     elif selected_option =="Calendar":
         st.header("Upcoming Events")
-        st.image(r"C:\Users\makge\OneDrive\Documents\ExploreDS\EDSA_Projects\My-App-Repo\pictures\Calendar.jpeg")
+        st.image(os.path.join(base_path, 'pictures', 'Calendar.jpeg'))
         notification_text = "Tech Case Study due at 10:30" 
         if selected_option == "Calendar" and st.button("Show Notification"):
             with st.expander("Notification"):
