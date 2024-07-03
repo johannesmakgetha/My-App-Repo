@@ -1,4 +1,4 @@
-abseil-cpp==20211102.0
+
 absl-py==2.1.0
 alembic==1.13.2
 altair==5.0.1
@@ -27,7 +27,7 @@ aws-crt-cpp==0.18.16
 aws-sdk-cpp==1.10.55
 babel==2.11.0
 beautifulsoup4==4.12.3
-blas==1.0=mkl
+blas==1.0
 bleach==4.1.0
 blinker==1.6.2
 blis==0.7.11
