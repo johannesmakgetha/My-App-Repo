@@ -31,9 +31,11 @@ from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_selection import SelectKBest
 from sklearn.preprocessing import StandardScaler
+import nltk
 import numpy as np
 from nltk.corpus import stopwords
 
+nltk.download('stopwords')
 # Load test data (assuming test.csv has a column 'category' containing labels)
 test_data = pd.read_csv('test.csv')
 y_true = test_data['category'].tolist()
