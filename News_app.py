@@ -38,11 +38,7 @@ from nltk.corpus import stopwords
 test_data = pd.read_csv('test.csv')
 y_true = test_data['category'].tolist()
 
-<<<<<<< HEAD
 base_path = os.getcwd()
-=======
-base_path = os.path.join(os.getcwd(), 'My-App-Repo')
->>>>>>> d297fe7c8a475d62a207562ecc1f598ae0883f4f
 
 
 # Function to preprocess text
@@ -128,11 +124,7 @@ def main():
 
     with col1:
         image_path = os.path.join(base_path, 'pictures', 'home.jpg')
-<<<<<<< HEAD
         st.image(image_path, width=300)  # Place the logo image in the first column
-=======
-	st.image(image_path, width=300)  # Place the logo image in the first column
->>>>>>> d297fe7c8a475d62a207562ecc1f598ae0883f4f
 
     with col2:
        options = ["Home", "About", "EDA & Overview", "Models", "Limitations", "Calendar"]
@@ -141,14 +133,9 @@ def main():
 
   # Build out the home page
     if selected_option == "Home":
-<<<<<<< HEAD
 
         image_path2 = os.path.join(base_path, 'pictures', 'home.jpg')
         st.image(image_path2, width=300)
-=======
-        image_path2 = os.path.join(base_path, 'pictures', 'home.jpg')
-	st.image(image_path2, width=300)
->>>>>>> d297fe7c8a475d62a207562ecc1f598ae0883f4f
         st.title("NewsHub Classifier App")
         st.image("https://media.istockphoto.com/id/1283277781/photo/read-online-news-media-on-laptop.jpg?s=612x612&w=0&k=20&c=D2EcPDQ3YbPPxGEWkB8iWvpt7LqNso9Sa-bX-9Q3RL4=", width=1500)
         st.header("Our Mission")
@@ -286,21 +273,10 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
             model_folder = os.path.join(base_path, 'mlruns', '0', 'fa12835b82dd42c3bb8400d3b6982f49')
 
         elif model_choice == "Random Forest":
-<<<<<<< HEAD
             model_folder = os.path.join(base_path, 'mlruns', '0', '24e6911e68314c02a57e6c8f64748f49')
 
         elif model_choice == "Gradient Boosting":
             model_folder = os.path.join(base_path, 'mlruns', '0', '8a4d5b797c2c4a289ac2694bfd7ba77d')
-=======
-            
-            
-	    model_folder = os.path.join(base_path, 'mlruns', '0', '24e6911e68314c02a57e6c8f64748f49')
-
-        elif model_choice == "Gradient Boosting":
-            
-            
-	    model_folder = os.path.join(base_path, 'mlruns', '0', '8a4d5b797c2c4a289ac2694bfd7ba77d')
->>>>>>> d297fe7c8a475d62a207562ecc1f598ae0883f4f
 
         
         label_encoder, tfidf_vectorizer, selector, scaler, model, meta_data = load_model_and_metadata(model_folder)
