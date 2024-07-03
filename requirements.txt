@@ -1,4 +1,4 @@
-abseil-cpp==20211102.0=hd77b12b_0
+abseil-cpp==20211102.0
 absl-py==2.1.0
 alembic==1.13.2
 altair==5.0.1
