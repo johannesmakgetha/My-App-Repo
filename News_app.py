@@ -130,7 +130,7 @@ def main():
 
     with col2:
        options = ["Home", "About", "EDA & Overview", "Models", "Limitations", "Calendar"]
-       selected_option = st.selectbox("Select a page:", options)  # Place the navigation options in the second column
+       selected_option = st.sidebar.selectbox("Select a page:", options)  # Place the navigation options in the second column
 
 
   # Build out the home page
@@ -354,19 +354,18 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
 	    
         st.markdown("# Strengths and Limitations")
         st.markdown("Our article classification app has its strengths and limitations. Here's a balanced view:")
-
+	st.markdown("---")
         st.markdown("## Strengths")
         st.markdown("- **User-Friendly Interface**: The app provides a straightforward and intuitive user interface, making it easy for users to input text and receive classification results.")
         st.markdown("- **Versatile Models**: The app utilizes three powerful machine learning models—Support Vector Machine (SVM), Random Forest, and Gradient Boosting—which enhance the accuracy and robustness of classifications.")
         st.markdown("- **Flexible Text Input**: The app can classify articles of varying lengths. Whether you have short snippets or lengthy articles, the app can handle text of various sizes.")
-
+	st.markdown("---")
         st.markdown("## Limitations")
         st.markdown("- **Limited Dataset**: Our model is trained on a limited dataset, which may not cover all possible topics or styles.")
         st.markdown("- **Noise and Ambiguity**: Articles can be noisy or ambiguous, making it challenging for our model to accurately classify them.")
         st.markdown("- **Inadequate Handling of Meta-Data**: The app relies heavily on meta-data to make classification decisions. It may not perform well if this information is missing or inaccurate.")
         st.markdown("- **Domain-Specific Knowledge**: The app may struggle with articles from domains or topics that are outside its training data or not well-represented in its categories.")
-        st.markdown("- **Training Data Size and Quality**: The app's performance may be limited by the size and quality of the training dataset. A small or low-quality dataset can negatively impact accuracy.")
-
+        
         st.header("Rating")
         rating = st.slider("Rate our App", 1, 3, 5)
         if st.button("Submit"):
