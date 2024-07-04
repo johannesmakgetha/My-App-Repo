@@ -354,12 +354,12 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
 	    
         st.markdown("# Strengths and Limitations")
         st.markdown("Our article classification app has its strengths and limitations. Here's a balanced view:")
-	st.markdown("---")
+	
         st.markdown("## Strengths")
         st.markdown("- **User-Friendly Interface**: The app provides a straightforward and intuitive user interface, making it easy for users to input text and receive classification results.")
         st.markdown("- **Versatile Models**: The app utilizes three powerful machine learning models—Support Vector Machine (SVM), Random Forest, and Gradient Boosting—which enhance the accuracy and robustness of classifications.")
         st.markdown("- **Flexible Text Input**: The app can classify articles of varying lengths. Whether you have short snippets or lengthy articles, the app can handle text of various sizes.")
-	st.markdown("---")
+	
         st.markdown("## Limitations")
         st.markdown("- **Limited Dataset**: Our model is trained on a limited dataset, which may not cover all possible topics or styles.")
         st.markdown("- **Noise and Ambiguity**: Articles can be noisy or ambiguous, making it challenging for our model to accurately classify them.")
