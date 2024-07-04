@@ -354,6 +354,7 @@ On this page, we'll provide a high-level overview of the key takeaways from our 
 	    
         st.markdown("# Strengths and Limitations")
         st.markdown("Our article classification app has its strengths and limitations. Here's a balanced view:")
+	st.markdown("---")
 	
         st.markdown("## Strengths")
         st.markdown("- **User-Friendly Interface**: The app provides a straightforward and intuitive user interface, making it easy for users to input text and receive classification results.")
